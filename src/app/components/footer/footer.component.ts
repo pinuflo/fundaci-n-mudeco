@@ -27,11 +27,4 @@ export class FooterComponent {
     'Incidencia',
     'Fondo de Emergencia',
   ];
-
-  socialLinks = [
-    { icon: '📘', label: 'Facebook',  href: '#' },
-    { icon: '📸', label: 'Instagram', href: '#' },
-    { icon: '🐦', label: 'Twitter/X', href: '#' },
-    { icon: '💼', label: 'LinkedIn',  href: '#' },
-  ];
 }

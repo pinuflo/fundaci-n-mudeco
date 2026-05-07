@@ -77,10 +77,10 @@ export class ContactComponent {
   ];
 
   socialLinks = [
-    { icon: '📘', label: 'Facebook',  href: '#', bgClass: 'bg-blue-600' },
-    { icon: '📸', label: 'Instagram', href: '#', bgClass: 'bg-gradient-to-br from-mudeco-pink-500 to-mudeco-purple-600' },
-    { icon: '🐦', label: 'Twitter/X', href: '#', bgClass: 'bg-gray-800' },
-    { icon: '💼', label: 'LinkedIn',  href: '#', bgClass: 'bg-blue-700' },
+    { label: 'Facebook',  href: '#', bgClass: 'bg-blue-600' },
+    { label: 'Instagram', href: '#', bgClass: 'bg-gradient-to-br from-pink-500 to-purple-600' },
+    { label: 'Twitter/X', href: '#', bgClass: 'bg-gray-800' },
+    { label: 'LinkedIn',  href: '#', bgClass: 'bg-blue-700' },
   ];
 
   onSubmit(): void {
