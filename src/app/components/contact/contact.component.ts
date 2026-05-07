@@ -12,6 +12,17 @@ interface FormData {
   mensaje: string;
 }
 
+const CONTACT_EMAIL = 'contacto@fundacionmudeco.cl';
+
+const ASUNTO_LABELS: Record<string, string> = {
+  unirse:      'Quiero unirme a MUDECO',
+  programas:   'Información sobre programas',
+  legal:       'Asesoría legal',
+  psicologica: 'Apoyo psicoemocional',
+  donacion:    'Quiero apoyar / donar',
+  otro:        'Otro',
+};
+
 @Component({
     selector: 'app-contact',
     imports: [CommonModule, FormsModule, ScrollRevealDirective],
@@ -19,7 +30,7 @@ interface FormData {
     styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  submitted = false;
+  mailtoClicked = false;
 
   formData: FormData = {
     nombre: '',
@@ -83,12 +94,23 @@ export class ContactComponent {
     { label: 'LinkedIn',  href: '#', bgClass: 'bg-blue-700' },
   ];
 
-  onSubmit(): void {
-    this.submitted = true;
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      this.submitted = false;
-      this.formData = { nombre: '', apellido: '', email: '', region: '', asunto: '', mensaje: '' };
-    }, 3000);
+  openMailto(): void {
+    const { nombre, apellido, email, region, asunto, mensaje } = this.formData;
+    const asuntoLabel = ASUNTO_LABELS[asunto] || asunto || 'Consulta general';
+
+    const subject = encodeURIComponent(
+      `[MUDECO] ${asuntoLabel} — ${nombre} ${apellido}`.trim()
+    );
+    const body = encodeURIComponent(
+      `Nombre: ${nombre} ${apellido}\n` +
+      `Correo de contacto: ${email}\n` +
+      `Región: ${region || 'No indicada'}\n` +
+      `Asunto: ${asuntoLabel}\n\n` +
+      `Mensaje:\n${mensaje}`
+    );
+
+    window.open(`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`, '_self');
+    this.mailtoClicked = true;
+    setTimeout(() => { this.mailtoClicked = false; }, 4000);
   }
 }

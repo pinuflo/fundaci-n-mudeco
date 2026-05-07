@@ -21,7 +21,7 @@
            class="bg-white rounded-3xl shadow-sm border border-mudeco-earth-100 p-8">
         <h3 class="text-xl font-serif font-bold text-mudeco-earth-900 mb-6">Envíanos un mensaje</h3>
 
-        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-5">
+        <form (ngSubmit)="openMailto()" #contactForm="ngForm" class="space-y-5">
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label for="nombre" class="block text-sm font-semibold text-mudeco-earth-700 mb-1.5">Nombre</label>
@@ -86,16 +86,25 @@
                              transition-all duration-200 text-sm placeholder-mudeco-earth-300 text-mudeco-earth-800 resize-none"></textarea>
           </div>
 
-          <button type="submit" [disabled]="contactForm.invalid || submitted"
+          <button type="submit" [disabled]="contactForm.invalid || mailtoClicked"
                   class="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
-            <span *ngIf="!submitted">Enviar mensaje</span>
-            <span *ngIf="submitted" class="flex items-center gap-2">
+            <span *ngIf="!mailtoClicked" class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              Abrir correo con tu mensaje
+            </span>
+            <span *ngIf="mailtoClicked" class="flex items-center gap-2">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              ¡Mensaje enviado!
+              ¡Abriendo tu cliente de correo!
             </span>
           </button>
+          <p class="text-xs text-mudeco-earth-400 text-center mt-2">
+            Se abrirá tu cliente de correo (Outlook, Apple Mail, Gmail, etc.) con el mensaje listo para enviar.
+          </p>
         </form>
       </div>
 
