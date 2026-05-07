@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface NavLink {
@@ -14,15 +14,21 @@ interface NavLink {
 })
 export class NavbarComponent {
   menuOpen = false;
+  scrolled = false;
 
   navLinks: NavLink[] = [
-    { label: 'Inicio',    href: '#inicio' },
+    { label: 'Inicio',        href: '#inicio' },
     { label: 'Quiénes Somos', href: '#quienes-somos' },
-    { label: 'Misión',    href: '#mision' },
-    { label: 'Programas', href: '#programas' },
-    { label: 'Impacto',   href: '#impacto' },
-    { label: 'Contacto',  href: '#contacto' },
+    { label: 'Misión',        href: '#mision' },
+    { label: 'Programas',     href: '#programas' },
+    { label: 'Impacto',       href: '#impacto' },
+    { label: 'Contacto',      href: '#contacto' },
   ];
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.scrolled = window.scrollY > 40;
+  }
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;

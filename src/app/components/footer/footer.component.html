@@ -1,4 +1,4 @@
-<footer class="bg-gray-900 text-white">
+<footer class="bg-mudeco-earth-900 text-white">
 
   <!-- Main Footer -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -7,22 +7,19 @@
       <!-- Brand -->
       <div class="lg:col-span-2 space-y-5">
         <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-mudeco-purple-700 to-mudeco-pink-500 flex items-center justify-center shadow-md">
-            <span class="text-white font-bold">M</span>
-          </div>
-          <div>
-            <span class="block text-xl font-serif font-bold text-white">Fundación MUDECO</span>
-            <span class="block text-xs text-mudeco-pink-400 font-medium -mt-0.5">Mujeres Cuidadoras de Chile</span>
-          </div>
+          <img src="assets/logo.jpg" alt="Fundación MUDECO"
+               class="h-12 w-auto object-contain rounded-lg shadow-md"/>
         </div>
-        <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+        <p class="text-mudeco-earth-300 text-sm leading-relaxed max-w-sm font-light">
           Defendemos los derechos de las mujeres cuidadoras en Chile desde 2018. Porque cuidar también es trabajo,
           y el trabajo merece reconocimiento.
         </p>
         <!-- Social links -->
         <div class="flex gap-3 pt-2">
           <a *ngFor="let social of socialLinks" [href]="social.href"
-             class="w-9 h-9 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-mudeco-purple-700 transition-colors duration-200 text-gray-400 hover:text-white"
+             class="w-9 h-9 rounded-lg bg-mudeco-earth-800 flex items-center justify-center
+                    hover:bg-mudeco-clay-600 transition-all duration-200 text-mudeco-earth-400
+                    hover:text-white hover:-translate-y-0.5 hover:shadow-md"
              [attr.aria-label]="social.label">
             <span class="text-sm">{{ social.icon }}</span>
           </a>
@@ -31,11 +28,11 @@
 
       <!-- Navigation -->
       <div>
-        <h4 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Navegación</h4>
+        <h4 class="font-semibold text-mudeco-earth-100 mb-5 text-xs uppercase tracking-[0.15em]">Navegación</h4>
         <ul class="space-y-3">
           <li *ngFor="let link of navLinks">
             <a [href]="link.href"
-               class="text-gray-400 hover:text-mudeco-pink-400 text-sm transition-colors duration-200">
+               class="text-mudeco-earth-400 hover:text-mudeco-clay-300 text-sm transition-colors duration-200 font-light">
               {{ link.label }}
             </a>
           </li>
@@ -44,11 +41,11 @@
 
       <!-- Programas -->
       <div>
-        <h4 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Programas</h4>
+        <h4 class="font-semibold text-mudeco-earth-100 mb-5 text-xs uppercase tracking-[0.15em]">Programas</h4>
         <ul class="space-y-3">
           <li *ngFor="let program of programLinks">
             <a href="#programas"
-               class="text-gray-400 hover:text-mudeco-pink-400 text-sm transition-colors duration-200">
+               class="text-mudeco-earth-400 hover:text-mudeco-clay-300 text-sm transition-colors duration-200 font-light">
               {{ program }}
             </a>
           </li>
@@ -58,12 +55,12 @@
   </div>
 
   <!-- Bottom Bar -->
-  <div class="border-t border-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+  <div class="border-t border-mudeco-earth-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-mudeco-earth-500 font-light">
       <p>© {{ currentYear }} Fundación MUDECO. Todos los derechos reservados.</p>
       <div class="flex gap-6">
-        <a href="#" class="hover:text-mudeco-pink-400 transition-colors duration-200">Política de privacidad</a>
-        <a href="#" class="hover:text-mudeco-pink-400 transition-colors duration-200">Términos de uso</a>
+        <a href="#" class="hover:text-mudeco-clay-400 transition-colors duration-200">Política de privacidad</a>
+        <a href="#" class="hover:text-mudeco-clay-400 transition-colors duration-200">Términos de uso</a>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 interface FormData {
   nombre: string;
@@ -13,7 +14,7 @@ interface FormData {
 
 @Component({
     selector: 'app-contact',
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, ScrollRevealDirective],
     templateUrl: './contact.component.html',
     styleUrl: './contact.component.scss'
 })
@@ -53,25 +54,25 @@ export class ContactComponent {
       icon: '📍',
       label: 'Dirección',
       value: 'Av. Providencia 1234, Of. 501, Santiago, Chile',
-      bgClass: 'bg-mudeco-purple-100',
+      bgClass: 'bg-mudeco-clay-50',
     },
     {
       icon: '📧',
       label: 'Correo electrónico',
       value: 'contacto@fundacionmudeco.cl',
-      bgClass: 'bg-mudeco-pink-100',
+      bgClass: 'bg-mudeco-sage-50',
     },
     {
       icon: '📞',
       label: 'Teléfono',
       value: '+56 2 2345 6789',
-      bgClass: 'bg-mudeco-rose-100',
+      bgClass: 'bg-mudeco-earth-50',
     },
     {
       icon: '📱',
       label: 'WhatsApp',
       value: '+56 9 8765 4321',
-      bgClass: 'bg-mudeco-warm-100',
+      bgClass: 'bg-mudeco-cream-200',
     },
   ];
 

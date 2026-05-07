@@ -1,41 +1,164 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Base ─────────────────────────────────────────────────────────── */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply font-sans text-gray-900 bg-white antialiased;
+    @apply font-sans text-mudeco-earth-900 bg-mudeco-cream-50 antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
   }
 
   h1, h2, h3, h4 {
     @apply font-serif;
   }
+
+  ::selection {
+    @apply bg-mudeco-clay-200 text-mudeco-earth-900;
+  }
 }
 
+/* ─── Components ────────────────────────────────────────────────────── */
 @layer components {
+
+  /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-mudeco-purple-700 to-mudeco-pink-500 shadow-md hover:shadow-lg hover:from-mudeco-purple-800 hover:to-mudeco-pink-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-mudeco-purple-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
+           font-sans font-semibold text-white tracking-wide
+           bg-mudeco-clay-600 shadow-md
+           hover:bg-mudeco-clay-700 hover:shadow-lg
+           active:scale-95
+           transition-all duration-300 ease-craft
+           focus:outline-none focus:ring-2 focus:ring-mudeco-clay-400 focus:ring-offset-2;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-mudeco-purple-700 border-2 border-mudeco-purple-700 hover:bg-mudeco-purple-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-mudeco-purple-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
+           font-sans font-semibold text-mudeco-clay-700 tracking-wide
+           border-2 border-mudeco-clay-500
+           hover:bg-mudeco-clay-50 hover:border-mudeco-clay-700
+           active:scale-95
+           transition-all duration-300 ease-craft
+           focus:outline-none focus:ring-2 focus:ring-mudeco-clay-400 focus:ring-offset-2;
   }
 
+  .btn-sage {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
+           font-sans font-semibold text-white tracking-wide
+           bg-mudeco-sage-600 shadow-md
+           hover:bg-mudeco-sage-700 hover:shadow-lg
+           active:scale-95
+           transition-all duration-300 ease-craft
+           focus:outline-none focus:ring-2 focus:ring-mudeco-sage-400 focus:ring-offset-2;
+  }
+
+  /* Typography */
   .section-title {
-    @apply text-3xl md:text-4xl font-serif font-bold text-gray-900 leading-tight;
+    @apply text-3xl md:text-4xl font-serif font-bold text-mudeco-earth-900 leading-snug;
   }
 
   .section-subtitle {
-    @apply text-lg text-gray-600 mt-4 leading-relaxed;
+    @apply text-lg text-mudeco-earth-600 mt-4 leading-relaxed font-light;
   }
 
+  .section-eyebrow {
+    @apply inline-flex items-center gap-3 text-mudeco-clay-600 text-xs font-semibold uppercase tracking-[0.18em];
+  }
+
+  /* Cards */
   .card {
-    @apply bg-white rounded-2xl shadow-sm border border-mudeco-purple-100 p-6 hover:shadow-md transition-shadow duration-300;
+    @apply bg-white rounded-2xl shadow-sm border border-mudeco-earth-100 p-6
+           hover:shadow-md transition-all duration-300 ease-craft;
+  }
+
+  .card-warm {
+    @apply bg-mudeco-cream-100 rounded-2xl border border-mudeco-cream-300 p-6
+           hover:shadow-md transition-all duration-300 ease-craft;
+  }
+
+  /* Divider */
+  .divider-clay {
+    @apply w-12 h-0.5 bg-mudeco-clay-400 rounded-full;
+  }
+
+  .divider-sage {
+    @apply w-12 h-0.5 bg-mudeco-sage-400 rounded-full;
   }
 }
+
+/* ─── Scroll-reveal animations ──────────────────────────────────────── */
+@layer utilities {
+
+  /* Initial hidden state */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.93);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Visible state — added by JS directive */
+  .is-revealed {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Stagger delays */
+  .delay-100 { transition-delay: 0.1s; }
+  .delay-200 { transition-delay: 0.2s; }
+  .delay-300 { transition-delay: 0.3s; }
+  .delay-400 { transition-delay: 0.4s; }
+  .delay-500 { transition-delay: 0.5s; }
+  .delay-600 { transition-delay: 0.6s; }
+  .delay-700 { transition-delay: 0.7s; }
+}
+
+/* ─── Decorative patterns ───────────────────────────────────────────── */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* ─── Custom scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFFEF9; }
+::-webkit-scrollbar-thumb {
+  background: #D08E50;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: #9A5520; }

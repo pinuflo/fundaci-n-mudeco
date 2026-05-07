@@ -1,57 +1,63 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-mudeco-purple-100">
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+  [class.scrolled]="scrolled"
+  [class.bg-mudeco-cream-50]="scrolled"
+  [class.shadow-sm]="scrolled"
+  [class.border-b]="scrolled"
+  [class.border-mudeco-earth-100]="scrolled"
+  [class.bg-transparent]="!scrolled">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+    <div class="flex items-center justify-between h-18 py-3">
 
       <!-- Logo -->
       <a href="#inicio" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mudeco-purple-700 to-mudeco-pink-500 flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
-          <span class="text-white font-bold text-sm">M</span>
-        </div>
-        <div class="leading-tight">
-          <span class="block text-lg font-serif font-bold text-mudeco-purple-800">MUDECO</span>
-          <span class="block text-xs text-mudeco-pink-600 font-medium -mt-1">Fundación</span>
-        </div>
+        <img
+          src="assets/logo.jpg"
+          alt="Fundación MUDECO"
+          class="h-12 w-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105 shadow-sm"/>
       </a>
 
       <!-- Desktop Navigation -->
-      <ul class="hidden md:flex items-center gap-8">
+      <ul class="hidden md:flex items-center gap-7">
         <li *ngFor="let link of navLinks">
           <a [href]="link.href"
-             class="text-gray-700 hover:text-mudeco-purple-700 font-medium text-sm transition-colors duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-mudeco-pink-500 after:transition-all after:duration-300 hover:after:w-full">
+             class="relative text-mudeco-earth-700 hover:text-mudeco-clay-600 font-sans font-medium text-sm tracking-wide transition-colors duration-200
+                    after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-[2px] after:bg-mudeco-clay-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-full">
             {{ link.label }}
           </a>
         </li>
         <li>
-          <a href="#contacto" class="btn-primary text-sm py-2 px-5">Únete a Nosotras</a>
+          <a href="#contacto" class="btn-primary text-sm py-2.5 px-6">Únete a Nosotras</a>
         </li>
       </ul>
 
       <!-- Mobile menu button -->
       <button
         (click)="toggleMenu()"
-        class="md:hidden p-2 rounded-lg text-gray-600 hover:text-mudeco-purple-700 hover:bg-mudeco-purple-50 transition-colors duration-200"
+        class="md:hidden p-2 rounded-xl text-mudeco-earth-700 hover:text-mudeco-clay-600 hover:bg-mudeco-clay-50 transition-all duration-200"
         [attr.aria-expanded]="menuOpen"
         aria-label="Abrir menú">
         <svg *ngIf="!menuOpen" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
         <svg *ngIf="menuOpen" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
     </div>
 
     <!-- Mobile menu -->
-    <div *ngIf="menuOpen" class="md:hidden border-t border-mudeco-purple-100 py-4">
-      <ul class="flex flex-col gap-3">
+    <div *ngIf="menuOpen"
+         class="md:hidden border-t border-mudeco-earth-100 py-4 bg-mudeco-cream-50/95 backdrop-blur-sm rounded-b-2xl shadow-lg">
+      <ul class="flex flex-col gap-1 px-2">
         <li *ngFor="let link of navLinks">
           <a [href]="link.href"
              (click)="closeMenu()"
-             class="block px-2 py-2 text-gray-700 hover:text-mudeco-purple-700 font-medium text-sm transition-colors duration-200 rounded-lg hover:bg-mudeco-purple-50">
+             class="block px-4 py-2.5 text-mudeco-earth-700 hover:text-mudeco-clay-600 font-medium text-sm transition-all duration-200 rounded-xl hover:bg-mudeco-clay-50">
             {{ link.label }}
           </a>
         </li>
-        <li class="pt-2">
+        <li class="pt-3 px-2">
           <a href="#contacto" (click)="closeMenu()" class="btn-primary text-sm w-full text-center">Únete a Nosotras</a>
         </li>
       </ul>
