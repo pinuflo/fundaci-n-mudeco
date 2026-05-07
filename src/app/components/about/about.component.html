@@ -1,0 +1,63 @@
+<section id="quienes-somos" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Image / Visual -->
+      <div class="relative order-2 lg:order-1">
+        <div class="relative">
+          <!-- Main visual block -->
+          <div class="bg-hero-gradient rounded-3xl p-8 shadow-lg border border-mudeco-purple-100">
+            <div class="grid grid-cols-2 gap-4">
+              <div *ngFor="let item of visualItems" [class]="item.class + ' rounded-2xl p-6 flex flex-col items-center text-center gap-3'">
+                <span class="text-3xl">{{ item.emoji }}</span>
+                <p class="text-sm font-semibold text-gray-700">{{ item.text }}</p>
+              </div>
+            </div>
+          </div>
+          <!-- Decorative element -->
+          <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-mudeco-pink-200 rounded-full opacity-60 blur-xl"></div>
+          <div class="absolute -top-6 -left-6 w-20 h-20 bg-mudeco-purple-200 rounded-full opacity-60 blur-xl"></div>
+        </div>
+      </div>
+
+      <!-- Text content -->
+      <div class="order-1 lg:order-2 space-y-6">
+        <div class="inline-flex items-center gap-2 text-mudeco-pink-600 text-sm font-semibold uppercase tracking-wider">
+          <span class="w-8 h-0.5 bg-mudeco-pink-500"></span>
+          Quiénes Somos
+        </div>
+
+        <h2 class="section-title">
+          Una comunidad que <span class="text-mudeco-purple-700">transforma vidas</span>
+        </h2>
+
+        <p class="text-gray-600 leading-relaxed">
+          La <strong class="text-mudeco-purple-700">Fundación MUDECO</strong> (Mujeres Cuidadoras de Chile) nació en 2018 con
+          un propósito claro: visibilizar, dignificar y proteger a las mujeres que dedican su tiempo y energía al cuidado
+          de familiares dependientes, enfermos o en situación de vulnerabilidad.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed">
+          En Chile, el 80% de las labores de cuidado recaen sobre las mujeres. Este trabajo, invisible y no remunerado,
+          perpetúa brechas de género y limita el desarrollo personal y profesional de miles de mujeres. <strong class="text-gray-800">MUDECO
+          existe para cambiar esta realidad.</strong>
+        </p>
+
+        <div class="bg-mudeco-purple-50 border-l-4 border-mudeco-purple-600 p-5 rounded-r-xl">
+          <p class="text-mudeco-purple-800 font-medium italic">
+            "Creemos que el cuidado es un pilar fundamental de la sociedad y que quienes cuidan merecen
+            reconocimiento, apoyo y derechos."
+          </p>
+          <p class="text-mudeco-purple-600 text-sm mt-2 font-semibold">— Equipo Fundador MUDECO</p>
+        </div>
+
+        <a href="#mision" class="btn-primary inline-flex">
+          Nuestra misión y valores
+          <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

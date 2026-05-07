@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-900 bg-white antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-mudeco-purple-700 to-mudeco-pink-500 shadow-md hover:shadow-lg hover:from-mudeco-purple-800 hover:to-mudeco-pink-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-mudeco-purple-500 focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-mudeco-purple-700 border-2 border-mudeco-purple-700 hover:bg-mudeco-purple-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-mudeco-purple-500 focus:ring-offset-2;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif font-bold text-gray-900 leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gray-600 mt-4 leading-relaxed;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-mudeco-purple-100 p-6 hover:shadow-md transition-shadow duration-300;
+  }
+}
