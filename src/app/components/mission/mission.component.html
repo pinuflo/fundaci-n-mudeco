@@ -1,0 +1,67 @@
+<section id="mision" class="py-24 bg-section-gradient">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 text-mudeco-pink-600 text-sm font-semibold uppercase tracking-wider mb-4">
+        <span class="w-8 h-0.5 bg-mudeco-pink-500"></span>
+        Misión & Valores
+        <span class="w-8 h-0.5 bg-mudeco-pink-500"></span>
+      </div>
+      <h2 class="section-title">Lo que nos guía cada día</h2>
+      <p class="section-subtitle">
+        Nuestra labor se sustenta en pilares fundamentales que definen quiénes somos y hacia dónde vamos.
+      </p>
+    </div>
+
+    <!-- Mission / Vision Cards -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <div class="relative card border-l-4 border-mudeco-purple-600 overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-mudeco-purple-50 rounded-full transform translate-x-12 -translate-y-12"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl bg-mudeco-purple-100 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-mudeco-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Nuestra Misión</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Promover y defender los derechos de las mujeres cuidadoras en Chile, generando espacios de
+            formación, apoyo mutuo e incidencia política para el reconocimiento del trabajo de cuidado como
+            un derecho social fundamental.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative card border-l-4 border-mudeco-pink-500 overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-mudeco-pink-50 rounded-full transform translate-x-12 -translate-y-12"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl bg-mudeco-pink-100 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-mudeco-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Nuestra Visión</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Un Chile donde el trabajo de cuidado sea plenamente reconocido, valorado y remunerado; donde
+            las mujeres cuidadoras accedan a seguridad social, tiempo libre y desarrollo personal en igualdad
+            de condiciones.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values Grid -->
+    <h3 class="text-2xl font-serif font-bold text-center text-gray-900 mb-10">Nuestros Valores</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let value of values" class="card hover:border-mudeco-purple-300 group">
+        <div [class]="'w-14 h-14 rounded-2xl flex items-center justify-center mb-4 text-2xl ' + value.bgClass">
+          {{ value.emoji }}
+        </div>
+        <h4 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-mudeco-purple-700 transition-colors">{{ value.title }}</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

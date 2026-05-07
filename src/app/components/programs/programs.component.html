@@ -1,0 +1,62 @@
+<section id="programas" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 text-mudeco-pink-600 text-sm font-semibold uppercase tracking-wider mb-4">
+        <span class="w-8 h-0.5 bg-mudeco-pink-500"></span>
+        Nuestros Programas
+        <span class="w-8 h-0.5 bg-mudeco-pink-500"></span>
+      </div>
+      <h2 class="section-title">Herramientas para el <span class="text-mudeco-purple-700">cambio real</span></h2>
+      <p class="section-subtitle">
+        Desarrollamos iniciativas concretas que acompañan, forman y empoderan a las mujeres cuidadoras en todo Chile.
+      </p>
+    </div>
+
+    <!-- Programs Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let program of programs; let i = index"
+           class="group relative card overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+
+        <!-- Top gradient bar -->
+        <div [class]="'absolute top-0 left-0 right-0 h-1 ' + program.gradientClass"></div>
+
+        <div class="pt-2">
+          <!-- Icon -->
+          <div [class]="'w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-5 ' + program.iconBgClass">
+            {{ program.icon }}
+          </div>
+
+          <h3 class="text-xl font-serif font-bold text-gray-900 mb-3 group-hover:text-mudeco-purple-700 transition-colors">
+            {{ program.title }}
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">{{ program.description }}</p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            <span *ngFor="let tag of program.tags"
+                  class="text-xs font-medium px-2.5 py-1 rounded-full bg-mudeco-purple-50 text-mudeco-purple-700 border border-mudeco-purple-200">
+              {{ tag }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="mt-16 bg-purple-gradient rounded-3xl p-10 text-center text-white shadow-xl">
+      <h3 class="text-2xl sm:text-3xl font-serif font-bold mb-4">¿Quieres participar en nuestros programas?</h3>
+      <p class="text-white/85 mb-8 max-w-xl mx-auto">
+        Nuestros programas están abiertos a todas las mujeres cuidadoras de Chile. ¡Inscríbete y únete a nuestra comunidad!
+      </p>
+      <a href="#contacto"
+         class="inline-flex items-center gap-2 bg-white text-mudeco-purple-700 font-semibold px-8 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-mudeco-purple-50 transition-all duration-300">
+        Inscribirme ahora
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
