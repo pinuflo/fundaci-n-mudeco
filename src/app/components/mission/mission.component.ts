@@ -9,11 +9,10 @@ interface Value {
 }
 
 @Component({
-  selector: 'app-mission',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './mission.component.html',
-  styleUrl: './mission.component.scss'
+    selector: 'app-mission',
+    imports: [CommonModule],
+    templateUrl: './mission.component.html',
+    styleUrl: './mission.component.scss'
 })
 export class MissionComponent {
   values: Value[] = [

@@ -9,20 +9,19 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    NavbarComponent,
-    HeroComponent,
-    AboutComponent,
-    MissionComponent,
-    ProgramsComponent,
-    ImpactComponent,
-    ContactComponent,
-    FooterComponent,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [
+        NavbarComponent,
+        HeroComponent,
+        AboutComponent,
+        MissionComponent,
+        ProgramsComponent,
+        ImpactComponent,
+        ContactComponent,
+        FooterComponent,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'Fundación MUDECO';

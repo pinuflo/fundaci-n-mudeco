@@ -11,11 +11,10 @@ interface Program {
 }
 
 @Component({
-  selector: 'app-programs',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './programs.component.html',
-  styleUrl: './programs.component.scss'
+    selector: 'app-programs',
+    imports: [CommonModule],
+    templateUrl: './programs.component.html',
+    styleUrl: './programs.component.scss'
 })
 export class ProgramsComponent {
   programs: Program[] = [
