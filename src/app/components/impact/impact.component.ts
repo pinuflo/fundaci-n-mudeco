@@ -42,14 +42,14 @@ export class ImpactComponent {
 
   testimonials = [
     {
-      quote: 'Gracias a MUDECO encontré una red de mujeres que entienden lo que vivo. Los talleres me ayudaron a entender mis derechos y a cuidarme a mí misma también.',
+      quote: 'Gracias a MUDECU encontré una red de mujeres que entienden lo que vivo. Los talleres me ayudaron a entender mis derechos y a cuidarme a mí misma también.',
       name: 'María González',
       location: 'Santiago, RM',
       initials: 'MG',
       avatarClass: 'bg-gradient-to-br from-mudeco-clay-600 to-mudeco-earth-500',
     },
     {
-      quote: 'Cuido a mi madre hace 10 años y siempre me sentí sola. En MUDECO descubrí que no estoy sola y que hay muchas mujeres que luchan por un cambio real.',
+      quote: 'Cuido a mi madre hace 10 años y siempre me sentí sola. En MUDECU descubrí que no estoy sola y que hay muchas mujeres que luchan por un cambio real.',
       name: 'Rosa Fuentes',
       location: 'Valparaíso, V Región',
       initials: 'RF',

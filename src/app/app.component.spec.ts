@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Fundación MUDECO' title`, () => {
+  it(`should have the 'Fundación MUDECU' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Fundación MUDECO');
+    expect(app.title).toEqual('Fundación MUDECU');
   });
 
   it('should render the hero section', () => {

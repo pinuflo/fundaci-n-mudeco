@@ -15,7 +15,7 @@ interface FormData {
 const CONTACT_EMAIL = 'contacto@fundacionmudeco.cl';
 
 const ASUNTO_LABELS: Record<string, string> = {
-  unirse:      'Quiero unirme a MUDECO',
+  unirse:      'Quiero unirme a MUDECU',
   programas:   'Información sobre programas',
   legal:       'Asesoría legal',
   psicologica: 'Apoyo psicoemocional',
@@ -99,7 +99,7 @@ export class ContactComponent {
     const asuntoLabel = ASUNTO_LABELS[asunto] || asunto || 'Consulta general';
 
     const subject = encodeURIComponent(
-      `[MUDECO] ${asuntoLabel} — ${nombre} ${apellido}`.trim()
+      `[MUDECU] ${asuntoLabel} — ${nombre} ${apellido}`.trim()
     );
     const body = encodeURIComponent(
       `Nombre: ${nombre} ${apellido}\n` +
